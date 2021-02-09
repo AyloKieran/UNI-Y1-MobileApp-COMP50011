@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#242425</color>
+    <color name="colorPrimaryDark">#111112</color>
+    <color name="colorAccent">#4C4C4E</color>
+
+    <color name="background">#c0bfbf</color>
+    <color name="postCard">#ffffff</color>
+    <color name="title">#000000</color>
+    <color name="description">#8a8a8a</color>
+    <color name="likes">#666666</color>
+    <color name="button">#ffffff</color>
+    <color name="error">#ff0000</color>
+
+</resources>

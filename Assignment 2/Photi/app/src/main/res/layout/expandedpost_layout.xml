@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dp"
+    android:background="@drawable/box"
+    >
+
+    <ImageView
+        android:id="@+id/imgImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/posttitle"
+        android:textSize="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="12dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgImage" />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="@string/postdescription"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/description"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtPostedAt"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="@string/postposted_at"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/title"
+        app:layout_constraintTop_toBottomOf="@id/txtDescription"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtPosted"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="@string/postdate"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/description"
+        app:layout_constraintTop_toBottomOf="@id/txtPostedAt"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtLocation"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="@string/postlocation"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/title"
+        app:layout_constraintTop_toBottomOf="@id/txtPosted"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtLoc"
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:text="@string/postlatitude_and_longitude"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/description"
+        app:layout_constraintTop_toBottomOf="@id/txtLocation"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imgShare"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/share"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imgMap"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/map"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toRightOf="@id/imgShare"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imgLike"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/like"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/txtLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/postlikes"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="4dp"
+        android:textColor="@color/likes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/imgLike" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

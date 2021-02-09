@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Photi</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="posttitle">Title</string>
+    <string name="postdescription">Description</string>
+    <string name="postlikes">Likes</string>
+    <string name="postposted_at">Posted At</string>
+    <string name="postdate">Date</string>
+    <string name="postlocation">Location</string>
+    <string name="postlatitude_and_longitude">Latitude and Longitude</string>
+    <string name="post_photo">Post Photo</string>
+</resources>

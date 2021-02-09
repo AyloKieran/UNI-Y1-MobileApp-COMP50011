@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="net.aylo.uni.photi.Camera">
+
+    <item
+        android:id="@+id/action_swapCamera"
+        android:orderInCategory="100"
+        android:title="Swap Camera"
+        android:icon="@drawable/ic_baseline_switch_camera_24"
+        app:showAsAction="always" />
+
+
+</menu>
