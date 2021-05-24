@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera | Photi</title>
+    <link rel="stylesheet" href="./css/tw.css">
+    <link rel="stylesheet" href="./css/fa.min.css">
+    <meta name="description" content="Photi - Photo sharing app">
+    <link rel="apple-touch-icon" sizes="180x180" href="/pwaAssets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/pwaAssets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/pwaAssets/favicon-16x16.png">
+    <link rel="manifest" href="/pwaAssets/site.webmanifest">
+    <link rel="mask-icon" href="/pwaAssets/safari-pinned-tab.svg" color="#555555">
+    <link rel="shortcut icon" href="/pwaAssets/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Photi">
+    <meta name="application-name" content="Photi">
+    <meta name="msapplication-TileColor" content="#383838">
+    <meta name="msapplication-config" content="/pwaAssets/browserconfig.xml">
+    <meta name="theme-color" content="#c1c1c1">
+</head>
+
+<body class="bg-gray-200 dark:bg-gray-800">
+    <nav
+        class="flex bg-gray-500 dark:bg-gray-900 top-0 left-0 h-12 w-screen fixed flex-no-shrink items-stretch p-4 z-40">
+        <a href="javascript:doBack()"
+            class="flex-no-grow flex-no-shrink relative leading-normal text-white no-underline flex items-center text-xl font-bold text-gray-400 pr-4"
+            aria-label="Go Back">
+            <p class="hidden">Go Back</p>
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <h1
+            class="flex-no-grow flex-no-shrink relative leading-normal text-white no-underline flex items-center text-xl font-bold">
+            Camera</h1>
+
+        <a href="javascript:swapCamera()"
+            class="flex-grow flex-no-shrink justify-end relative leading-normal text-white no-underline flex items-center text-xl dark:text-gray-400"
+            aria-label="Swap Camera">
+            <p class="hidden">Swap Camera</p>
+            <i id="cameraicon" class="fas fa-video"></i>
+        </a>
+    </nav>
+
+    <section class="flex flex-col" id="postSection">
+        <video id="viewfinder" class="w-screen h-screen object-cover" playsinline></video>
+    </section>
+
+    <a class="fixed flex items-center bottom-0 p-0 w-screen pb-8 opacity-80" href="javascript:takePhoto()"
+        aria-label="Capture Photo" alt="Capture Photo">
+        <div class="w-16 m-auto bg-gray-900 rounded-full shadow-xl">
+            <div class="m-auto">
+                <i class="fa fa-camera text-gray-300 p-4 text-3xl transition ease-in duration-200 hover:text-white"></i>
+            </div>
+        </div>
+    </a>
+
+    <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+        <div class="modal-overlay absolute w-full h-full bg-black opacity-70"></div>
+
+        <div
+            class="modal-container bg-gray-400 dark:bg-gray-700 w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto ">
+            <div class="modal-content py-4 text-left px-6">
+                <div class="flex justify-between items-center pb-3">
+                    <p class="text-2xl font-bold text-gray-800 dark:text-white">Create Post</p>
+                    <div class="modal-close cursor-pointer z-50 text-gray-800 dark:text-white">
+                        <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="bg-gray-600 mb-2">
+                    <canvas id="preview" class="w-full pt-0 p-20 pb-0">
+                </div>
+                </canvas>
+                <input placeholder="Title" class="border p-1 w-full text-gray-700 text-sm">
+                <input placeholder="Description" class="border p-1 mt-2 w-full text-gray-700 text-sm">
+                <p id="lat" class="text-gray-700 dark:text-white text-sm">Latitude: </p>
+                <p id="lon" class="text-gray-700 dark:text-white text-sm">Longitude: </p>
+
+                <div class="flex justify-end">
+                    <a href="index.html"
+                        class="modal-close shadow-md px-4 bg-gray-500 dark:bg-gray-800 p-2 py-2 rounded-lg text-white hover:bg-gray-600 dark:hover:bg-gray-900">Post</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('serviceworker.js').then(
+                    function (registration) {
+                        console.log('Service worker registration successful',
+                            registration);
+                    },
+                    function (err) {
+                        console.log('Service worker registration failed', err);
+                    });
+            });
+        }
+    </script>
+    <script src="./js/main.js"></script>
+    <script src="./js/camera.js"></script>
+</body>
+
+</html>

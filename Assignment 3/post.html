@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post | Photi</title>
+    <link rel="stylesheet" href="./css/tw.css">
+    <link rel="stylesheet" href="./css/fa.min.css">
+    <meta name="description" content="Photi - Photo sharing app">
+    <link rel="apple-touch-icon" sizes="180x180" href="/pwaAssets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/pwaAssets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/pwaAssets/favicon-16x16.png">
+    <link rel="manifest" href="/pwaAssets/site.webmanifest">
+    <link rel="mask-icon" href="/pwaAssets/safari-pinned-tab.svg" color="#555555">
+    <link rel="shortcut icon" href="/pwaAssets/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Photi">
+    <meta name="application-name" content="Photi">
+    <meta name="msapplication-TileColor" content="#383838">
+    <meta name="msapplication-config" content="/pwaAssets/browserconfig.xml">
+    <meta name="theme-color" content="#c1c1c1">
+</head>
+
+<body class="bg-gray-200 dark:bg-gray-800">
+    <nav class="flex bg-gray-500 dark:bg-gray-900 top-0 left-0 h-12 w-screen fixed flex-no-shrink items-stretch p-4">
+        <a href="javascript:doBack()"
+            class="flex-no-grow flex-no-shrink relative leading-normal text-white no-underline flex items-center text-xl font-bold text-gray-200 dark:text-gray-400 pr-4"
+            aria-label="Go Back">
+            <i class="fas fa-arrow-left"></i>
+            <p class="hidden">Go Back</p>
+        </a>
+        <h1
+            class="flex-no-grow flex-no-shrink relative leading-normal text-white no-underline flex items-center text-xl font-bold">
+            Post Info</h1>
+    </nav>
+
+    <section class="flex flex-col mt-14 px-2 w-auto mx-auto sm:w-4/5 sm:px-0 md:w-3/5 lg:w-2/5 xl:w-2/6"
+        id="postSection">
+
+    </section>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('serviceworker.js').then(
+                    function (registration) {
+                        console.log('Service worker registration successful',
+                            registration);
+                    },
+                    function (err) {
+                        console.log('Service worker registration failed', err);
+                    });
+            });
+        }
+    </script>
+    <script src="./js/main.js"></script>
+    <script src="./js/post.js"></script>
+</body>
+
+</html>
